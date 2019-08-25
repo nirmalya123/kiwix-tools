@@ -7,6 +7,10 @@ The Kiwix tools is a collection of Kiwix related command line tools:
 * kiwix-search: Fulltext search in ZIM files
 * kiwix-serve: HTTP daemon serving ZIM files
 
+[![Build Status](https://travis-ci.org/kiwix/kiwix-tools.svg?branch=master)](https://travis-ci.org/kiwix/kiwix-tools)
+[![CodeFactor](https://www.codefactor.io/repository/github/kiwix/kiwix-tools/badge)](https://www.codefactor.io/repository/github/kiwix/kiwix-tools)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 Disclaimer
 ----------
 
@@ -45,8 +49,8 @@ If you want to install these dependencies locally, then use the
 kiwix-tools directory as install prefix.
 
 If you want to compile Kiwix tools statically, the dependencies should
-be compiled statically (provide a lib...a library), for example by
-using "--enable-static" with "./configure".
+be compiled statically (provide a `lib...a` library), for example by
+using `--enable-static` with `./configure`.
 
 If you compile manually Libmicrohttpd, you might need to compile it
 without GNU TLS, a bug here will empeach further compilation of Kiwix
@@ -63,13 +67,14 @@ compilation tools. Install them first:
 * Pkg-config
 
 These tools should be packaged if you use a cutting edge operating
-system. If not, have a look to the "Troubleshooting" section.
+system. If not, have a look to the [Troubleshooting](#Troubleshooting)
+section.
 
 Compilation
 -----------
 
 Once all dependencies are installed, you can compile Kiwix tools with:
-```
+```bash
 meson . build
 ninja -C build
 ```
@@ -84,8 +89,7 @@ Installation
 ------------
 
 If you want to install the Kiwix tools, here we go:
-
-```
+```bash
 ninja -C build install
 ```
 
@@ -97,13 +101,12 @@ Uninstallation
 ------------
 
 If you want to uninstall the Kiwix tools:
-
-```
+```bash
 ninja -C build uninstall
 ```
 
 Like for the installation, you might need to run the command as root
-(or using 'sudo').
+(or using `sudo`).
 
 Docker
 ------
@@ -115,7 +118,7 @@ Troubleshooting
 ---------------
 
 If you need to install Meson "manually":
-```
+```bash
 virtualenv -p python3 ./ # Create virtualenv
 source bin/activate      # Activate the virtualenv
 pip3 install meson       # Install Meson
@@ -123,7 +126,7 @@ hash -r                  # Refresh bash paths
 ```
 
 If you need to install Ninja "manually":
-```
+```bash
 git clone git://github.com/ninja-build/ninja.git
 cd ninja
 git checkout release
@@ -142,4 +145,5 @@ repository.
 License
 -------
 
-GPLv3 or later, see COPYING for more details.
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0) or later, see
+[COPYING](COPYING) for more details.
